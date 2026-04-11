@@ -6,3 +6,28 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Make nvim background transparent so WezTerm transparency shows through
+local function set_transparent_bg()
+  local groups = {
+    "Normal", "NormalNC", "NormalFloat", "FloatBorder",
+    "SignColumn", "StatusLine", "StatusLineNC",
+    "LineNr", "CursorLineNr", "EndOfBuffer",
+    "TelescopeNormal", "TelescopeBorder",
+    "NeoTreeNormal", "NeoTreeNormalNC",
+  }
+  for _, group in ipairs(groups) do
+    vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+  end
+end
+
+set_transparent_bg()
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = set_transparent_bg,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = set_transparent_bg,
+})
