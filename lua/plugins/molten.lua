@@ -2,7 +2,6 @@ return {
   {
     "benlubas/molten-nvim",
     version = false,
-    lazy = false,
     build = ":UpdateRemotePlugins",
     cmd = {
       "MoltenInit",

@@ -1,7 +1,7 @@
 return {
   {
     "goerz/jupytext.nvim",
-    lazy = false,
+    ft = "ipynb",
     opts = {
       format = "py:percent",
       update = true,
