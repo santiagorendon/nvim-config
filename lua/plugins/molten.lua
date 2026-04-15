@@ -3,24 +3,7 @@ return {
     "benlubas/molten-nvim",
     version = false,
     build = ":UpdateRemotePlugins",
-    cmd = {
-      "MoltenInit",
-      "MoltenDeinit",
-      "MoltenInfo",
-      "MoltenNext",
-      "MoltenPrev",
-      "MoltenEvaluateLine",
-      "MoltenEvaluateVisual",
-      "MoltenEvaluateOperator",
-      "MoltenReevaluateCell",
-      "MoltenDelete",
-      "MoltenShowOutput",
-      "MoltenHideOutput",
-      "MoltenEnterOutput",
-      "MoltenInterrupt",
-      "MoltenImportOutput",
-      "MoltenExportOutput",
-    },
+    event = { "BufReadPost *.ipynb", "BufNewFile *.ipynb" },
     init = function()
       vim.g.molten_image_provider = "none"
       vim.g.molten_auto_open_output = false

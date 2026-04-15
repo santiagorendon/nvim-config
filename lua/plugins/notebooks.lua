@@ -1,8 +1,9 @@
 return {
   {
     "goerz/jupytext.nvim",
-    ft = "ipynb",
+    lazy = false,
     opts = {
+      jupytext = "C:/Users/santi/AppData/Roaming/Python/Python311/Scripts/jupytext.exe",
       format = "py:percent",
       update = true,
       filetype = function(_, format, metadata)
