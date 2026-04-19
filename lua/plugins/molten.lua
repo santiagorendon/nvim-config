@@ -11,7 +11,7 @@ return {
       vim.g.molten_output_virt_lines = true
       vim.g.molten_wrap_output = true
       vim.g.molten_virt_text_output = true
-      vim.g.molten_virt_text_max_lines = 12
+      vim.g.molten_virt_text_max_lines = 40
       vim.g.molten_auto_open_html_in_browser = true
     end,
   },
